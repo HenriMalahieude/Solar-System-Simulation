@@ -1,0 +1,37 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Script" referent="RBX6D1B8FD7BFD54C269F6C08D07ED0AF83">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<bool name="Disabled">true</bool>
+			<Content name="LinkedSource"><null></null></Content>
+			<string name="Name">PullDown</string>
+			<string name="ScriptGuid">{CDDDF807-56BD-4DA6-BBA0-516927AA8137}</string>
+			<ProtectedString name="Source"><![CDATA[local sets = require(game.ReplicatedStorage.UniverseSettings)
+local char = script.Parent
+
+local gConst = sets.PlrGravityConstant
+
+local down = Instance.new("BodyForce")
+down.Force = Vector3.new(0, 0, 0)
+down.Parent = char.HumanoidRootPart
+
+game:GetService("RunService").Stepped:Connect(function(dt)
+	if char and char:FindFirstChild("HumanoidRootPart") then
+		local hrp = char:FindFirstChild("HumanoidRootPart")
+		local forc = Vector3.new(0, 0, 0)
+		for _, body in pairs(workspace.CelestialBodies:GetChildren()) do
+			local dir = (body.Position - hrp.Position)
+			local gForce = dir.Unit * (gConst * body.CustomMass.Value * 20) / math.pow(dir.Magnitude, 2)
+			forc = forc + gForce
+		end 
+		down.Force = forc
+	end
+end)]]></ProtectedString>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+	</Item>
+</roblox>
