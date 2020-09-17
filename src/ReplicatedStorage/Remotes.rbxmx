@@ -1,0 +1,21 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Folder" referent="RBX3155D690F0BF4DB29743996EFA2BD55C">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<string name="Name">Remotes</string>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+		<Item class="RemoteEvent" referent="RBX2BA47CADE37A40C490F4819A98724DE4">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">RemoteEvent</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+	</Item>
+</roblox>
